@@ -25,7 +25,9 @@ function App() {
 
   const formatDate = function(datestamp){
     const d = new Date(datestamp);
-    const value =  `${d.getDate()}/${(d.getMonth() + 1)}/${d.getFullYear()}`;
+    const month = (d.getMonth() + 1) < 10 ? `0${(d.getMonth() + 1)}` : (d.getMonth() + 1);
+    const day = d.getDate() < 10 ? `0${d.getDate()}` : d.getDate();
+    const value =  `${day}/${month}/${d.getFullYear()}`;
     return value;
   }
 
@@ -49,9 +51,27 @@ function App() {
          <Textarea label={sectionLabel} text={sectionText}/>
         </div>
         <nav>
-         <CustomButton icon="fas fa-user" label="My name is" value={`${data.results[0].name.first} ${data.results[0].name.last}`} handleClick={handleUserInfo} active={isActive}/>
-         <CustomButton icon="far fa-envelope" value={`${data.results[0].email}`} label="My email is"  handleClick={handleUserInfo} active={isActive}/>
-         <CustomButton icon="far fa-calendar-alt" value={formatDate(data.results[0].dob.date)} label="My birthday is" handleClick={handleUserInfo} active={isActive}/>
+         <CustomButton 
+          icon="fas fa-user" 
+          label="My name is" 
+          value={`${data.results[0].name.first} ${data.results[0].name.last}`} 
+          handleClick={handleUserInfo} 
+          active={isActive}
+          />
+         <CustomButton 
+          icon="far fa-envelope" 
+          value={`${data.results[0].email}`} 
+          label="My email is"  
+          handleClick={handleUserInfo} 
+          active={isActive}
+         />
+         <CustomButton 
+          icon="far fa-calendar-alt" 
+          value={formatDate(data.results[0].dob.date)} 
+          label="My birthday is" 
+          handleClick={handleUserInfo} 
+          active={isActive}
+         />
          <CustomButton 
           icon="fas fa-map-marked-alt" 
           value={`${data.results[0].location.street.number} ${data.results[0].location.street.name} - ${data.results[0].location.city}, ${data.results[0].location.country}`} 
@@ -59,8 +79,19 @@ function App() {
           handleClick={handleUserInfo}
           active={isActive}
          />
-         <CustomButton icon="fas fa-phone" value={`${data.results[0].phone} / ${data.results[0].cell}`} label="My phone is" handleClick={handleUserInfo} active={isActive}/>
-         <CustomButton icon="fas fa-lock" value={`${data.results[0].login.password}`} label="My password is" handleClick={handleUserInfo} active={isActive}/>
+         <CustomButton 
+          icon="fas fa-phone" 
+          value={`${data.results[0].phone} / ${data.results[0].cell}`} 
+          label="My phone is" 
+          handleClick={handleUserInfo} active={isActive}
+          />
+         <CustomButton 
+          icon="fas fa-lock" 
+          value={`${data.results[0].login.password}`} 
+          label="My password is" 
+          handleClick={handleUserInfo} 
+          active={isActive}
+         />
         </nav>
       </div>
 
