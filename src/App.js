@@ -9,12 +9,14 @@ import './App.css';
 function App() {
 
   const API_URL = 'https://randomuser.me/api';
+  //use custom hook to get data
   const {data} = useFetch(API_URL);
-
+  //use state to manage text and css active section
   const [sectionLabel, setSectionLabel] = useState('');
   const [sectionText, setSectionText] = useState('');
   const [isActive, setActiveSection] = useState(false);
 
+  //handle app state
   const handleUserInfo = function(label, value){
      setSectionLabel(label);
      setSectionText(value);
