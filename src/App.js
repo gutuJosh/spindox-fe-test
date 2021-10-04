@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import useFetch from "./hooks/useFetch";
+import Preloader from "./components/Preloader";
 import './App.css';
 
 function App() {
@@ -7,14 +8,12 @@ function App() {
   const API_URL = 'https://randomuser.me/api';
   const {data} = useFetch(API_URL);
 
-  useEffect( () => {  
-     
-  });
+
 
   return (
     <div className="App">
       {data === false ?
-      <p>Loading...</p>
+      <Preloader label="Loading..."/>
       :
       <p>OK</p>
       }
