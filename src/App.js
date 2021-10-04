@@ -8,12 +8,16 @@ function App() {
   const {data} = useFetch(API_URL);
 
   useEffect( () => {  
-     console.log(data);
+     
   });
 
   return (
     <div className="App">
-      
+      {data === false ?
+      <p>Loading...</p>
+      :
+      <p>OK</p>
+      }
     </div>
   );
 }
