@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types';
 
 const CustomButton = (props) => {
- console.log( props.handleClick );
+
     return(
         <div className={props.active === props.value ? 'custon-button active' : 'custom-button'} onClick={() => {
             props.handleClick(props.label, props.value);
