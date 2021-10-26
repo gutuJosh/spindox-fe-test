@@ -5,13 +5,13 @@ const useFetch = (url) => {
 
     const [data, setData] = useState(false);
 
-    const getData = async() => {
+
+    useEffect(() => {
+      const getData = async() => {
         const response = await fetch(url);
         const userData = await response.json();
         setData(userData);
-    }
-
-    useEffect(() => {
+     }
       getData();
     },[url]);
 

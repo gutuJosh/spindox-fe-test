@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from "react";
 import useFetch from "./hooks/useFetch";
+import useWorker from "./hooks/useWorker";
 import Preloader from "./components/Preloader";
 import ProfileImage from "./components/ProfileImage";
 import CustomButton from "./components/CustomButton";
 import Textarea from "./components/Textarea";
 import './App.css';
+import Worker from "./Worker";
+
 
 function App() {
 
   const API_URL = 'https://randomuser.me/api';
   //use custom hook to get data
   const {data} = useFetch(API_URL);
+  const {list} = useWorker(Worker);
   //use state to manage text and css active section
   const [sectionLabel, setSectionLabel] = useState('');
   const [sectionText, setSectionText] = useState('');
@@ -35,7 +39,11 @@ function App() {
   useEffect(() => {
     if(data && sectionText === ''){
       handleUserInfo("My name is", `${data.results[0].name.first} ${data.results[0].name.last}`);
-    }  
+     
+    }
+    if(list){
+      console.log(list);
+    }
   });
 
 
