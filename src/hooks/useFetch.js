@@ -5,15 +5,15 @@ const useFetch = (url) => {
 
     const [data, setData] = useState(false);
 
-
     useEffect(() => {
       const getData = async() => {
         const response = await fetch(url);
         const userData = await response.json();
-        setData(userData);
+        setData(userData.data);
      }
-      getData();
-    },[url]);
+    getData();
+   
+   },[url]);
 
    return {data};
 

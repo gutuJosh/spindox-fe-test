@@ -6,7 +6,11 @@ const Preloader = (props) => {
     return(
         <div className="preloader">
          <div className="header">
-          <p><i className="fas fa-spinner fa-spin"></i></p>
+          <p>
+          <svg className="icn spinner">
+            <use href="#spinner-icon"></use>
+           </svg>
+          </p>
           <p>{props.label}</p>
          </div>
          

@@ -1,0 +1,26 @@
+{
+    "extensionDescr": {
+        "message": "Trova veloce database e liste indirizzi email di aziende per l'Email Marketing B2B"
+    },
+    "bmMsgTitle": {
+        "message": "Messaggio da Bancomail"
+    },
+    "bmMsgDescr": {
+        "message": "Abbiamo novità su una o più delle tue liste."
+    },
+    "bmMsgBtnLabel": {
+        "message": "Scopri ora!"
+    },
+    "bmSyncBtnLabel" : {
+        "message" : "Monitora"
+    },
+    "languageSelector" : {
+        "message": "Sélectionnez votre langue préférée" 
+    },
+    "saveOptionsBtn" : {
+        "message": "Salva" 
+    },
+    "saveOptionStatus" : {
+        "message": "Opzione salvata!" 
+    }
+}
