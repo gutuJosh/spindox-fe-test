@@ -11,10 +11,13 @@ const useWorker = (url) => {
      if(list === false){
         const WebWorker = new WorkerSetup(url);
         WebWorker.onmessage = (event) => {
-            const getData = JSON.parse(event.data.serverResponse);
-            setList(getData.data);
+            const getData = event.data;
+            if(getData.serverStatus === 200){
+              let obj = JSON.parse(getData.serverResponse);
+              setList(obj.data);
+            }
             WebWorker.terminate();
-        }  
+        } 
      }
     },[url, list]);
 

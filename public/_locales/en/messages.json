@@ -1,0 +1,26 @@
+{
+    "extensionDescr": {
+        "message": "Quickly find business email lists for cold Email Marketing"
+    },
+    "bmMsgTitle": {
+        "message": "Message from da Bancomail"
+    },
+    "bmMsgDescr": {
+        "message": "One or more of your lists have updates"
+    },
+    "bmMsgBtnLabel": {
+        "message": "Find out more"
+    },
+    "bmSyncBtnLabel" : {
+        "message" : "Start synching"
+    },
+    "languageSelector" : {
+        "message": "Select your preferred language" 
+    },
+    "saveOptionsBtn" : {
+        "message": "Save" 
+    },
+    "saveOptionStatus" : {
+        "message": "Option saved!" 
+    }
+}

@@ -1,25 +1,36 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
+  "manifest_version": 2,
+  "name": "Bancomail",
+  "version": "1.0.0",
+  "description": "__MSG_extensionDescr__",
+  "default_locale": "it",
+  "icons": {
+    "48": "icons/launcher-icon-1x.png",
+    "96": "icons/launcher-icon-2x.png",
+    "144": "icons/launcher-icon-144.png"
+  },
+  "permissions": ["storage", "unlimitedStorage", "notifications"],
+  "background": {
+    "scripts": ["js/background.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "Bancomail",
+    "default_icon": "icons/launcher-icon-1x.png"
+  },
+  "content_scripts": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "matches": ["*://*.bancomail.com/*", "*://*.bancomail.it/*"],
+      "js": ["js/content.js"],
+      "run_at": "document_end"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true,
+    "open_in_tab": false
+  },
+  "web_accessible_resources": ["js/script.js", "js/options.js"],
+  "minimum_chrome_version": "60"
 }
